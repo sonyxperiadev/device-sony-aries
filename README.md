@@ -1,0 +1,2 @@
+device-sony-aries
+=================
