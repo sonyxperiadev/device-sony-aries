@@ -1,0 +1,298 @@
+<thermanager>
+	<resources>
+		<!-- thermal zones -->
+		<resource name="zone0" type="tz">/sys/class/thermal/thermal_zone0</resource>
+		<resource name="zone1" type="tz">/sys/class/thermal/thermal_zone1</resource>
+		<resource name="zone2" type="tz">/sys/class/thermal/thermal_zone2</resource>
+		<resource name="zone3" type="tz">/sys/class/thermal/thermal_zone3</resource>
+		<resource name="zone4" type="tz">/sys/class/thermal/thermal_zone4</resource>
+		<resource name="zone5" type="tz">/sys/class/thermal/thermal_zone5</resource>
+		<resource name="zone6" type="tz">/sys/class/thermal/thermal_zone6</resource>
+		<resource name="zone7" type="tz">/sys/class/thermal/thermal_zone7</resource>
+		<resource name="zone8" type="tz">/sys/class/thermal/thermal_zone8</resource>
+		<resource name="zone9" type="tz">/sys/class/thermal/thermal_zone9</resource>
+		<resource name="zone10" type="tz">/sys/class/thermal/thermal_zone10</resource>
+		<resource name="zone11" type="tz">/sys/class/thermal/thermal_zone11</resource>
+		<resource name="zone12" type="tz">/sys/class/thermal/thermal_zone12</resource>
+
+		<!-- generic cpufreq -->
+		<resource name="cpu0" type="sysfs">/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq</resource>
+		<resource name="cpu1" type="sysfs">/sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq</resource>
+		<resource name="cpu2" type="sysfs">/sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq</resource>
+		<resource name="cpu3" type="sysfs">/sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq</resource>
+
+		<resource name="cpu" type="union">
+			<resource name="cpu0" />
+			<resource name="cpu1" />
+			<resource name="cpu2" />
+			<resource name="cpu3" />
+		</resource>
+
+		<!-- device-specific -->
+		<!-- XXX: driver broken:
+		<resource name="backlight" type="sysfs">/sys/class/leds/wled:backlight/max_brightness</resource>
+		-->
+		<resource name="backlight" type="echo" />
+
+		<resource name="temp-emmc" type="msm-adc">/sys/devices/00-vadc-3100/emmc_therm</resource>
+		<resource name="temp-batt" type="msm-adc">/sys/devices/00-vadc-3100/batt_therm</resource>
+		<resource name="kgsl-3d0" type="sysfs">/sys/class/kgsl/kgsl-3d0/max_gpuclk</resource>
+		<resource name="dc" type="sysfs">/sys/class/power_supply/qpnp-dc/current_max</resource>
+		<resource name="usb" type="sysfs">/sys/class/power_supply/usb/current_system_max</resource>
+		<resource name="charger" type="sysfs">/sys/class/power_supply/battery/system_temp_level</resource>
+		<resource name="charge_en" type="sysfs">/sys/class/power_supply/battery/charging_enabled</resource>
+		<resource name="temp-core" type="alias" resource="zone2" />
+
+		<resource name="temp-gpu" type="union">
+			<resource name="zone9" />
+			<resource name="zone10" />
+		</resource>
+
+		<resource name="temp-cpu" type="union">
+			<resource name="zone5" />
+			<resource name="zone6" />
+			<resource name="zone7" />
+			<resource name="zone8" />
+		</resource>
+
+		<!-- TODO: -->
+		<resource name="camera" type="echo" />
+		<resource name="modem" type="echo" />
+
+		<resource name="shutdown" type="halt" delay="5" />
+	</resources>
+
+	<control name="usb">
+		<mitigation level="off"><value resource="usb">1500000</value></mitigation>
+		<mitigation level="1"><value resource="usb">1100000</value></mitigation>
+		<mitigation level="2"><value resource="usb">900000</value></mitigation>
+		<mitigation level="3"><value resource="usb">700000</value></mitigation>
+		<mitigation level="4"><value resource="usb">500000</value></mitigation>
+		<mitigation level="5"><value resource="usb">300000</value></mitigation>
+		<mitigation level="6"><value resource="usb">150000</value></mitigation>
+	</control>
+
+	<control name="dc">
+		<mitigation level="off"><value resource="dc">1800000</value></mitigation>
+		<mitigation level="1"><value resource="dc">1100000</value></mitigation>
+		<mitigation level="2"><value resource="dc">900000</value></mitigation>
+		<mitigation level="3"><value resource="dc">700000</value></mitigation>
+		<mitigation level="4"><value resource="dc">500000</value></mitigation>
+		<mitigation level="5"><value resource="dc">300000</value></mitigation>
+		<mitigation level="6"><value resource="dc">150000</value></mitigation>
+	</control>
+
+	<control name="charge_en">
+		<mitigation level="off"><value resource="charge_en">1</value></mitigation>
+		<mitigation level="1"><value resource="charge_en">0</value></mitigation>
+		<mitigation level="2"><value resource="shutdown" /></mitigation>
+	</control>
+
+	<control name="charging">
+		<mitigation level="off"><value resource="charger">0</value></mitigation>
+		<mitigation level="1"><value resource="charger">1</value></mitigation>
+		<mitigation level="2"><value resource="charger">2</value></mitigation>
+		<mitigation level="3"><value resource="charger">3</value></mitigation>
+		<mitigation level="4"><value resource="charger">4</value></mitigation>
+		<mitigation level="5"><value resource="charger">5</value></mitigation>
+		<mitigation level="6"><value resource="charger">6</value></mitigation>
+		<mitigation level="7"><value resource="charger">7</value></mitigation>
+		<mitigation level="8"><value resource="charger">8</value></mitigation>
+		<mitigation level="9"><value resource="charger">9</value></mitigation>
+	</control>
+
+	<control name="modem">
+		<mitigation level="off"><value resource="modem">0</value></mitigation>
+		<mitigation level="1"><value resource="modem">1</value></mitigation>
+	</control>
+
+	<control name="camera">
+		<mitigation level="off"><value resource="camera">NORMAL</value></mitigation>
+		<mitigation level="1"><value resource="camera">WARNING</value></mitigation>
+		<mitigation level="2"><value resource="camera">CRITICAL</value></mitigation>
+	</control>
+
+	<control name="shutdown">
+		<mitigation level="off" />
+		<mitigation level="1"><value resource="shutdown" /></mitigation>
+	</control>
+
+	<control name="backlight">
+		<mitigation level="off"><value resource="backlight">4095</value></mitigation>
+		<mitigation level="1"><value resource="backlight">3083</value></mitigation>
+		<mitigation level="2"><value resource="backlight">2055</value></mitigation>
+		<mitigation level="3"><value resource="backlight">1027</value></mitigation>
+		<mitigation level="3"><value resource="backlight">819</value></mitigation>
+	</control>
+
+	<control name="gpu">
+		<mitigation level="off"><value resource="gpu">450000000</value></mitigation>
+		<mitigation level="2"><value resource="gpu">200000000</value></mitigation>
+		<mitigation level="3"><value resource="shutdown" /></mitigation>
+	</control>
+
+	<control name="cpu">
+		<mitigation level="off"><value resource="cpu">2150400</value></mitigation>
+		<mitigation level="1"><value resource="cpu">1958400</value></mitigation>
+		<mitigation level="2"><value resource="cpu">1728000</value></mitigation>
+		<mitigation level="3"><value resource="cpu">1574400</value></mitigation>
+		<mitigation level="4"><value resource="cpu">1497600</value></mitigation>
+		<mitigation level="5"><value resource="cpu">1267200</value></mitigation>
+		<mitigation level="6"><value resource="cpu">1190400</value></mitigation>
+		<mitigation level="7"><value resource="cpu">1036800</value></mitigation>
+		<mitigation level="8"><value resource="cpu">960000</value></mitigation>
+		<mitigation level="9"><value resource="cpu">883200</value></mitigation>
+		<mitigation level="10"><value resource="cpu">729600</value></mitigation>
+		<mitigation level="11"><value resource="cpu">652800</value></mitigation>
+		<mitigation level="12"><value resource="cpu">422400</value></mitigation>
+		<mitigation level="13"><value resource="cpu">300000</value></mitigation>
+		<mitigation level="14"><value resource="shutdown" /></mitigation>
+	</control>
+
+	<!-- burn-out protection -->
+	<configuration sensor="temp-core">
+		<threshold>
+			<mitigation name="shutdown" level="off" />
+		</threshold>
+		<threshold trigger="120" clear="115">
+			<mitigation name="shutdown" level="1" />
+		</threshold>
+	</configuration>
+
+	<!-- USB and DC -->
+	<configuration sensor="temp-emmc">
+		<threshold>
+			<mitigation name="dc" level="off" />
+			<mitigation name="usb" level="off" />
+		</threshold>
+		<threshold trigger="384" clear="364">
+			<mitigation name="dc" level="1" />
+			<mitigation name="usb" level="1" />
+		</threshold>
+		<threshold trigger="400" clear="380">
+			<mitigation name="dc" level="2" />
+			<mitigation name="usb" level="2" />
+		</threshold>
+		<threshold trigger="416" clear="396">
+			<mitigation name="dc" level="3" />
+			<mitigation name="usb" level="3" />
+		</threshold>
+		<threshold trigger="424" clear="412">
+			<mitigation name="dc" level="4" />
+			<mitigation name="usb" level="4" />
+		</threshold>
+		<threshold trigger="432" clear="420">
+			<mitigation name="dc" level="5" />
+			<mitigation name="usb" level="5" />
+		</threshold>
+		<threshold trigger="448" clear="440">
+			<mitigation name="dc" level="6" />
+			<mitigation name="usb" level="6" />
+		</threshold>
+	</configuration>
+
+	<!-- charging -->
+	<configuration sensor="temp-emmc">
+		<threshold>
+			<mitigation name="charging" level="off" />
+		</threshold>
+		<threshold trigger="384" clear="372">
+			<mitigation name="charging" level="2" />
+		</threshold>
+		<threshold trigger="400" clear="380">
+			<mitigation name="charging" level="4" />
+		</threshold>
+		<threshold trigger="416" clear="396">
+			<mitigation name="charging" level="6" />
+		</threshold>
+		<threshold trigger="432" clear="420">
+			<mitigation name="charging" level="7" />
+		</threshold>
+		<threshold trigger="448" clear="436">
+			<mitigation name="charging" level="8" />
+		</threshold>
+	</configuration>
+	<configuration sensor="temp-batt">
+		<threshold>
+			<mitigation name="charge_en" level="off" />
+		</threshold>
+		<threshold trigger="464" clear="442">
+			<mitigation name="charge_en" level="1" />
+		</threshold>
+		<threshold trigger="800" clear="780">
+			<mitigation name="charge_en" level="2" />
+		</threshold>
+	</configuration>
+
+	<!-- GPU -->
+	<configuration sensor="temp-emmc">
+		<threshold>
+			<mitigation name="gpu" level="off" />
+		</threshold>
+		<threshold trigger="464" clear="452">
+			<mitigation name="gpu" level="1" />
+		</threshold>
+	</configuration>
+	<configuration sensor="temp-gpu">
+		<threshold>
+			<mitigation name="gpu" level="off" />
+		</threshold>
+		<threshold trigger="100" clear="95">
+			<mitigation name="gpu" level="1" />
+		</threshold>
+		<threshold trigger="120" clear="110">
+			<mitigation name="gpu" level="2" />
+		</threshold>
+	</configuration>
+
+	<!-- modem -->
+	<configuration sensor="temp-emmc">
+		<threshold>
+			<mitigation name="modem" level="off" />
+		</threshold>
+		<threshold trigger="464" clear="452">
+			<mitigation name="modem" level="1" />
+		</threshold>
+	</configuration>
+
+	<!-- backlight -->
+	<configuration sensor="temp-emmc">
+		<threshold>
+			<mitigation name="backlight" level="off" />
+		</threshold>
+		<threshold trigger="424" clear="412">
+			<mitigation name="backlight" level="1" />
+		</threshold>
+		<threshold trigger="440" clear="428">
+			<mitigation name="backlight" level="2" />
+		</threshold>
+		<threshold trigger="456" clear="444">
+			<mitigation name="backlight" level="3" />
+		</threshold>
+		<threshold trigger="464" clear="452">
+			<mitigation name="backlight" level="4" />
+		</threshold>
+	</configuration>
+
+	<!-- CPU -->
+	<configuration sensor="temp-cpu">
+		<threshold>
+			<mitigation name="cpu" level="off" />
+		</threshold>
+		<threshold trigger="80" clear="78">
+			<mitigation name="cpu" level="2" />
+		</threshold>
+		<threshold trigger="90" clear="85">
+			<mitigation name="cpu" level="4" />
+		</threshold>
+		<threshold trigger="95" clear="90">
+			<mitigation name="cpu" level="9" />
+		</threshold>
+		<threshold trigger="110" clear="95">
+			<mitigation name="cpu" level="12" />
+		</threshold>
+		<threshold trigger="120" clear="115">
+			<mitigation name="cpu" level="14" />
+		</threshold>
+	</configuration>
+</thermanager>
