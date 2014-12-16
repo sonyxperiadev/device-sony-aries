@@ -29,6 +29,9 @@ PRODUCT_COPY_FILES += \
     device/sony/aries/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
     device/sony/aries/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/aries/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    device/sony/honami/recovery/recovery.sh:root/recovery.sh \
+    device/sony/honami/recovery/ramdisk-recovery.cpio:root/recovery/ramdisk-recovery.cpio \
+    device/sony/honami/recovery/sbin/busybox_static:root/sbin/busybox_static
 
 PRODUCT_NAME := aosp_d5803
 PRODUCT_DEVICE := aries
