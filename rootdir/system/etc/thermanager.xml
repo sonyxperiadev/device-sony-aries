@@ -29,10 +29,7 @@
 		</resource>
 
 		<!-- device-specific -->
-		<!-- XXX: driver broken:
 		<resource name="backlight" type="sysfs">/sys/class/leds/wled:backlight/max_brightness</resource>
-		-->
-		<resource name="backlight" type="echo" />
 
 		<resource name="temp-emmc" type="msm-adc">/sys/devices/00-vadc-3100/emmc_therm</resource>
 		<resource name="temp-batt" type="msm-adc">/sys/devices/00-vadc-3100/batt_therm</resource>
@@ -118,11 +115,11 @@
 	</control>
 
 	<control name="backlight">
-		<mitigation level="off"><value resource="backlight">4095</value></mitigation>
-		<mitigation level="1"><value resource="backlight">3083</value></mitigation>
-		<mitigation level="2"><value resource="backlight">2055</value></mitigation>
-		<mitigation level="3"><value resource="backlight">1027</value></mitigation>
-		<mitigation level="3"><value resource="backlight">819</value></mitigation>
+		<mitigation level="off"><value resource="backlight">255</value></mitigation>
+		<mitigation level="1"><value resource="backlight">192</value></mitigation>
+		<mitigation level="2"><value resource="backlight">128</value></mitigation>
+		<mitigation level="3"><value resource="backlight">64</value></mitigation>
+		<mitigation level="4"><value resource="backlight">51</value></mitigation>
 	</control>
 
 	<control name="gpu">
