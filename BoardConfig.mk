@@ -17,3 +17,5 @@ include device/sony/shinano/BoardConfig.mk
 TARGET_BOOTLOADER_BOARD_NAME := D5803
 
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656259072
+
+TARGET_SPECIFIC_HEADER_PATH += device/sony/aries/include
