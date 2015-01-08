@@ -28,8 +28,7 @@ PRODUCT_COPY_FILES += \
     device/sony/aries/rootdir/system/etc/bcmdhd.cal:system/etc/firmware/wlan/bcmdhd/bcmdhd.cal \
     device/sony/aries/rootdir/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf \
     device/sony/aries/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
-    device/sony/aries/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/sony/aries/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    device/sony/aries/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml
 
 PRODUCT_NAME := aosp_d5803
 PRODUCT_DEVICE := aries
