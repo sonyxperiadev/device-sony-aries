@@ -123,9 +123,12 @@
 	</control>
 
 	<control name="gpu">
-		<mitigation level="off"><value resource="gpu">450000000</value></mitigation>
-		<mitigation level="2"><value resource="gpu">200000000</value></mitigation>
-		<mitigation level="3"><value resource="shutdown" /></mitigation>
+		<mitigation level="off"><value resource="gpu">578000000</value></mitigation>
+		<mitigation level="1"><value resource="gpu">462400000</value></mitigation>
+		<mitigation level="2"><value resource="gpu">389000000</value></mitigation>
+		<mitigation level="3"><value resource="gpu">330000000</value></mitigation>
+		<mitigation level="4"><value resource="gpu">200000000</value></mitigation>
+		<mitigation level="5"><value resource="shutdown" /></mitigation>
 	</control>
 
 	<control name="cpu">
@@ -227,7 +230,7 @@
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="464" clear="452">
-			<mitigation name="gpu" level="1" />
+			<mitigation name="gpu" level="4" />
 		</threshold>
 	</configuration>
 	<configuration sensor="temp-gpu">
@@ -235,10 +238,10 @@
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="100" clear="95">
-			<mitigation name="gpu" level="1" />
+			<mitigation name="gpu" level="4" />
 		</threshold>
 		<threshold trigger="120" clear="110">
-			<mitigation name="gpu" level="2" />
+			<mitigation name="gpu" level="5" />
 		</threshold>
 	</configuration>
 
