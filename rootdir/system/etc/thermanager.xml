@@ -35,7 +35,7 @@
 		<resource name="temp-batt" type="msm-adc">/sys/devices/00-vadc-3100/batt_therm</resource>
 		<resource name="kgsl-3d0" type="sysfs">/sys/class/kgsl/kgsl-3d0/max_gpuclk</resource>
 		<resource name="dc" type="sysfs">/sys/class/power_supply/qpnp-dc/current_max</resource>
-		<resource name="usb" type="sysfs">/sys/class/power_supply/usb/current_system_max</resource>
+		<resource name="usb" type="sysfs">/sys/class/power_supply/usb/current_max</resource>
 		<resource name="charger" type="sysfs">/sys/class/power_supply/battery/system_temp_level</resource>
 		<resource name="charge_en" type="sysfs">/sys/class/power_supply/battery/charging_enabled</resource>
 		<resource name="temp-core" type="alias" resource="zone2" />
