@@ -24,7 +24,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 PRODUCT_COPY_FILES += \
     device/sony/aries/rootdir/logo.rle:root/logo.rle \
-    device/sony/aries/rootdir/system/etc/BCM4354.hcd:system/etc/firmware/BCM43xx.hcd \
+    device/sony/aries/rootdir/system/etc/BCM4339.hcd:system/etc/firmware/BCM43xx.hcd \
     device/sony/aries/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
     device/sony/aries/rootdir/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf \
     device/sony/aries/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
