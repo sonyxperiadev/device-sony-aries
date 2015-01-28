@@ -16,6 +16,7 @@ include device/sony/shinano/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := D5803
 
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656259072
+#Reserve space for data encryption (12656259072-16384)
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
 PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/aries/kernel-headers
