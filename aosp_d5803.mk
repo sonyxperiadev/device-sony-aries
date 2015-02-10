@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+KERNEL_DEFCONFIG := aosp_shinano_aries_defconfig
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
