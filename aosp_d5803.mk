@@ -15,6 +15,9 @@
 TARGET_KERNEL_CONFIG := aosp_shinano_aries_defconfig
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
+DEVICE_PACKAGE_OVERLAYS += \
+    device/sony/aries/overlay
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 $(call inherit-product-if-exists, device/sony/shinano/device.mk)
