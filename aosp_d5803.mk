@@ -13,7 +13,6 @@
 # limitations under the License.
 
 TARGET_KERNEL_CONFIG := aosp_shinano_aries_defconfig
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
 DEVICE_PACKAGE_OVERLAYS += \
     device/sony/aries/overlay
