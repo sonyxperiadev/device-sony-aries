@@ -32,7 +32,8 @@ PRODUCT_COPY_FILES += \
     device/sony/aries/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
     device/sony/aries/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     device/sony/aries/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/sony/aries/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+    device/sony/aries/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    device/sony/aries/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
     device/sony/aries/rootdir/system/etc/tfa98xx/coldboot.patch:/system/etc/tfa98xx/coldboot.patch \
