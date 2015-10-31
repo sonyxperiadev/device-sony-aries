@@ -1,4 +1,5 @@
-#
-# This empty Android.mk file exists to prevent the build system from
-# automatically including any other Android.mk files under this directory.
-#
+ifneq ($(filter aries, $(TARGET_DEVICE)),)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
+endif
