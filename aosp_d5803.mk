@@ -67,6 +67,10 @@ PRODUCT_COPY_FILES += \
     device/sony/aries/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.preset:/system/etc/tfa98xx/VoiceCallEarpice_top.preset \
     device/sony/aries/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.eq:/system/etc/tfa98xx/VoiceCallEarpice_top.eq
 
+# NFC config
+PRODUCT_PACKAGES += nfc_nci.aries
+ADDITIONAL_DEFAULT_PROPERTIES += ro.hardware.nfc_nci=aries
+
 PRODUCT_NAME := aosp_d5803
 PRODUCT_DEVICE := aries
 PRODUCT_MODEL := Xperia Z3 Compact (AOSP)
