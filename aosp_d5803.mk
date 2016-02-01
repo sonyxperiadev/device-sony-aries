@@ -19,6 +19,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
+$(call inherit-product, device/sony/common/common.mk)
 $(call inherit-product, device/sony/shinano/device.mk)
 $(call inherit-product, vendor/sony/aries/aries-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
