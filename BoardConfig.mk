@@ -26,4 +26,3 @@ BOARD_KERNEL_CMDLINE += mem=1756M
 PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/aries/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
-TARGET_TAP_TO_WAKE_STRING := true
