@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.aries
 
+# NFC config
+PRODUCT_PACKAGES += \
+    nfc_nci.pn54x.default
+
 PRODUCT_NAME := aosp_d5803
 PRODUCT_DEVICE := aries
 PRODUCT_MODEL := Xperia Z3 Compact (AOSP)
