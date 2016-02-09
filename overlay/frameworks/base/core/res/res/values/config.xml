@@ -89,7 +89,4 @@
          in darkness (although they may not be visible in a bright room). -->
     <integer name="config_screenBrightnessDark">5</integer>
 
-    <!-- Whether device supports double tap to wake -->
-    <bool name="config_supportDoubleTapWake">true</bool>
-
 </resources>
