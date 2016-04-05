@@ -91,4 +91,4 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/shinano/platform.mk)
-$(call inherit-product, vendor/sony/aries/aries-vendor.mk)
+$(call inherit-product, vendor/sony/shinano-aries/aries-vendor.mk)
