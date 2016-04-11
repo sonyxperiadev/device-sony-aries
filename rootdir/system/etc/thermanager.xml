@@ -29,7 +29,7 @@
 		</resource>
 
 		<!-- device-specific -->
-		<resource name="backlight" type="sysfs">/sys/class/leds/wled:backlight/max_brightness</resource>
+		<resource name="backlight" type="sysfs">/sys/class/leds/lcd-backlight/max_brightness</resource>
 
 		<resource name="temp-emmc" type="msm-adc">/sys/devices/00-vadc-3100/emmc_therm</resource>
 		<resource name="temp-batt" type="msm-adc">/sys/devices/00-vadc-3100/batt_therm</resource>
