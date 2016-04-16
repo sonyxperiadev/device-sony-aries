@@ -219,6 +219,7 @@
     <ctl name="VoWLAN_Tx Mixer INTERNAL_BT_SCO_TX_VoWLAN" value="0" />
     <ctl name="AFE_PCM_RX_Voice Mixer VoWLAN" value="0" />
     <ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="0" />
+    <ctl name="QUAT_MI2S_RX_Voice Mixer VoWLAN" value="0" />
     <!-- VoWLAN end-->
 
     <!-- Voice2 -->
@@ -342,6 +343,7 @@
 
     <!-- deep buffer playback -->
     <ctl name="Incall_Music Audio Mixer MultiMedia1" value="0" />
+    <ctl name="Incall_Music_2 Audio Mixer MultiMedia1" value="0"/>
     <!-- deep buffer playback end -->
 
     <!-- capture fm -->
@@ -354,6 +356,7 @@
 
     <!-- low latency playback -->
     <ctl name="Incall_Music Audio Mixer MultiMedia5" value="0" />
+    <ctl name="Incall_Music_2 Audio Mixer MultiMedia5" value="0" />
     <!-- low latency playback end -->
 
     <!-- tfa98xx speaker -->
@@ -588,8 +591,17 @@
         <ctl name="Incall_Music Audio Mixer MultiMedia5" value="1" />
     </path>
 
+    <path name="deep-buffer-playback incall-music2">
+        <ctl name="Incall_Music_2 Audio Mixer MultiMedia1" value="1" />
+        <ctl name="Incall_Music_2 Audio Mixer MultiMedia5" value="1" />
+    </path>
+
     <path name="deep-buffer-playback incall-music-bt">
         <path name="deep-buffer-playback incall-music" />
+    </path>
+
+    <path name="deep-buffer-playback incall-music2-bt">
+        <path name="deep-buffer-playback incall-music2" />
     </path>
 
     <path name="deep-buffer-playback incall-music-all-rx-mute">
@@ -1198,22 +1210,19 @@
         <ctl name="MultiMedia2 Mixer SLIM_0_TX" value="1" />
     </path>
 
-    <path name="low-latency-record">
-        <ctl name="MultiMedia5 Mixer SLIM_0_TX" value="1" />
-    </path>
-
     <path name="voice-call">
         <ctl name="SLIM_0_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
     </path>
 
-    <path name="voice-call speaker">
+    <path name="voice-call handset">
         <ctl name="QUAT_MI2S_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
     </path>
 
-    <path name="voice-call handset">
-        <path name="voice-call speaker" />
+    <path name="voice-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
+        <path name="voice-call handset" />
     </path>
 
     <path name="voice-call hdmi">
@@ -1254,18 +1263,23 @@
         <path name="voice-call bt-sco" />
     </path>
 
+    <path name="voice-call speaker-and-headphones">
+        <path name="voice-call" />
+    </path>
+
     <path name="voice2-call">
         <ctl name="SLIM_0_RX_Voice Mixer Voice2" value="1" />
         <ctl name="Voice2_Tx Mixer SLIM_0_TX_Voice2" value="1" />
     </path>
 
-    <path name="voice2-call speaker">
+    <path name="voice2-call handset">
         <ctl name="QUAT_MI2S_RX_Voice Mixer Voice2" value="1" />
         <ctl name="Voice2_Tx Mixer SLIM_0_TX_Voice2" value="1" />
     </path>
 
-    <path name="voice2-call handset">
-        <path name="voice2-call speaker" />
+    <path name="voice2-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
+        <path name="voice2-call handset" />
     </path>
 
     <path name="voice2-call hdmi">
@@ -1285,6 +1299,18 @@
     <path name="voice2-call usb-headphones">
         <ctl name="AFE_PCM_RX_Voice Mixer Voice2" value="1" />
         <ctl name="Voice2_Tx Mixer AFE_PCM_TX_Voice2" value="1" />
+    </path>
+
+    <path name="voice2-call speaker-and-headphones">
+        <path name="voice2-call" />
+    </path>
+
+    <path name="voice2-call incall-music2">
+        <path name="voice2-call" />
+    </path>
+
+    <path name="voice2-call incall-music2-bt">
+        <path name="voice2-call bt-sco" />
     </path>
 
     <path name="play-fm">
@@ -1472,13 +1498,14 @@
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
     </path>
 
-    <path name="volte-call speaker">
+    <path name="volte-call handset">
         <ctl name="QUAT_MI2S_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
     </path>
 
-    <path name="volte-call handset">
-        <path name="volte-call speaker" />
+    <path name="volte-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
+        <path name="volte-call handset" />
     </path>
 
     <path name="volte-call hdmi">
@@ -1498,6 +1525,15 @@
     <path name="volte-call usb-headphones">
         <ctl name="AFE_PCM_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="1" />
+    </path>
+
+    <path name="volte-call afe-proxy">
+        <ctl name="AFE_PCM_RX_Voice Mixer VoLTE" value="1" />
+        <ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="1" />
+    </path>
+
+    <path name="volte-call speaker-and-headphones">
+        <path name="volte-call" />
     </path>
 
     <path name="vowlan-call">
@@ -1523,6 +1559,20 @@
     <path name="vowlan-call usb-headphones">
         <ctl name="AFE_PCM_RX_Voice Mixer VoWLAN" value="1" />
         <ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call handset">
+        <ctl name="QUAT_MI2S_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
+        <path name="vowlan-call handset" />
+    </path>
+
+    <path name="vowlan-call speaker-and-headphones">
+        <path name="vowlan-call" />
     </path>
 
     <path name="volte-call incall-music">
@@ -1552,13 +1602,18 @@
         <ctl name="Voip_Tx Mixer AFE_PCM_TX_Voip" value="1" />
     </path>
 
-    <path name="compress-voip-call speaker">
+    <path name="compress-voip-call handset">
         <ctl name="QUAT_MI2S_RX_Voice Mixer Voip" value="1" />
         <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="1" />
     </path>
 
-    <path name="compress-voip-call handset">
-        <path name="compress-voip-call speaker" />
+    <path name="compress-voip-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
+        <path name="compress-voip-call handset" />
+    </path>
+
+    <path name="compress-voip-call speaker-and-headphones">
+        <path name="compress-voip-call" />
     </path>
 
     <path name="spkr-rx-calib">
@@ -1579,13 +1634,14 @@
         <ctl name="QCHAT_Tx Mixer SLIM_0_TX_QCHAT" value="1" />
     </path>
 
-    <path name="qchat-call speaker">
+    <path name="qchat-call handset">
         <ctl name="QUAT_MI2S_RX_Voice Mixer QCHAT" value="1" />
         <ctl name="QCHAT_Tx Mixer SLIM_0_TX_QCHAT" value="1" />
     </path>
 
-    <path name="qchat-call handset">
-        <path name="qchat-call speaker" />
+    <path name="qchat-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
+        <path name="qchat-call handset" />
     </path>
 
     <path name="qchat-call bt-sco">
@@ -1595,6 +1651,10 @@
 
     <path name="qchat-call bt-sco-wb">
         <path name="qchat-call bt-sco" />
+    </path>
+
+    <path name="qchat-call speaker-and-headphones">
+        <path name="qchat-call" />
     </path>
 
     <!-- These are actual sound device specific mixer settings -->
@@ -2290,8 +2350,6 @@
         <ctl name="TFA98XX_PARAM_TYPE" value="Speakerphone" />
         <ctl name="TFA98XX_CHANNEL" value="Bottom" />
         <ctl name="TFA98XX_SPKR_AMP" value="1" />
-        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
-        <ctl name="AUDIO_EXT_EC MUX" value="QUAT_MI2S_TX" />
     </path>
 
     <path name="voice-speaker-wv">
@@ -2697,6 +2755,14 @@
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
     </path>
 
+    <path name="i2srx-echo-reference">
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="I2S_RX" />
+    </path>
+
+    <path name="i2stx-echo-reference">
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="QUAT_MI2S_TX" />
+    </path>
+
     <path name="dmic-endfire">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
@@ -2892,8 +2958,8 @@
     <path name="binaural-mic">
         <path name="binaural-mic-common" />
         <!-- 120dBSPLpeak & -33dBV/Pa so mic gain 10.5dB so ADCx VOL = 7 -->
-        <ctl name="ADC3 Volume" value="6" />
-        <ctl name="ADC2 Volume" value="6" />
+        <ctl name="ADC3 Volume" value="13" />
+        <ctl name="ADC2 Volume" value="13" />
         <ctl name="IIR1 INP1 Volume" value="87" />
         <ctl name="IIR2 INP1 Volume" value="87" />
     </path>
