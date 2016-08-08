@@ -77,7 +77,7 @@
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
-    <ctl name="AUX PCM SampleRate" value="rate_8000" />
+    <ctl name="AUX PCM SampleRate" value="8000" />
     <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia4" value="0" />
@@ -1403,7 +1403,7 @@
     </path>
 
     <path name="hfp-sco-wb">
-        <ctl name="AUX PCM SampleRate" value="rate_16000" />
+        <ctl name="AUX PCM SampleRate" value="16000" />
         <path name="hfp-sco" />
     </path>
 
@@ -2657,19 +2657,19 @@
     </path>
 
     <path name="bt-sco-headset-wb">
-        <ctl name="AUX PCM SampleRate" value="rate_16000" />
+        <ctl name="AUX PCM SampleRate" value="16000" />
     </path>
 
     <path name="bt-sco-mic-wb">
-        <ctl name="AUX PCM SampleRate" value="rate_16000" />
+        <ctl name="AUX PCM SampleRate" value="16000" />
     </path>
 
     <path name="bt-sco-carkit-mic-wb">
-        <ctl name="AUX PCM SampleRate" value="rate_16000" />
+        <ctl name="AUX PCM SampleRate" value="16000" />
     </path>
 
     <path name="bt-sco-dsp-mic-wb">
-        <ctl name="AUX PCM SampleRate" value="rate_16000" />
+        <ctl name="AUX PCM SampleRate" value="16000" />
     </path>
 
     <path name="usb-headset-mic">
