@@ -100,3 +100,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/shinano/platform.mk)
 $(call inherit-product, vendor/sony/shinano-aries/aries-vendor.mk)
+
+# copy wlan firmware
+$(call inherit-product-if-exists, vendor/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
