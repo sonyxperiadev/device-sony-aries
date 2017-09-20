@@ -24,6 +24,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=aries
 
+# Recovery config
+BOARD_SONY_INIT_FLAGS += -DDEV_BLOCK_FOTA_NUM="16"
+
 PRODUCT_VENDOR_KERNEL_HEADERS += $(DEVICE_PATH)/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
