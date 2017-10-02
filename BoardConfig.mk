@@ -24,6 +24,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=aries
 
+# Platform
+PRODUCT_PLATFORM := shinano
+
 # Recovery config
 BOARD_SONY_INIT_FLAGS += -DDEV_BLOCK_FOTA_NUM="16"
 
