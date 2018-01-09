@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES := \
 
 # Thermal Configration
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/vendor/etc/thermanager.xml:vendor/etc/thermanager.xml
+    $(DEVICE_PATH)/rootdir/vendor/etc/thermanager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermanager.xml
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/system/etc/tfa98xx/coldboot.patch:/system/etc/tfa98xx/coldboot.patch \
