@@ -2091,36 +2091,36 @@
         <ctl name="SLIM TX7 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
         <!-- 66 % of 124 (range 0 - 124) Register: 0x229 -->
-        <ctl name="DEC6 Volume" value="84" />
+        <ctl name="DEC6 Volume" value="81" />
         <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <!-- 66 % of 124 (range 0 - 124) Register: 0x231 -->
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="80" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
     <path name="stereo-mic">
         <path name="stereo-mic-common" />
         <ctl name="ADC1 Volume" value="12" />
-        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="11" />
     </path>
 
     <path name="stereo-mic-gain-low">
         <path name="stereo-mic-common" />
         <ctl name="ADC1 Volume" value="12" />
-        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="11" />
     </path>
 
     <path name="stereo-mic-gain-mid">
         <path name="stereo-mic-common" />
         <ctl name="ADC1 Volume" value="15" />
-        <ctl name="ADC4 Volume" value="15" />
+        <ctl name="ADC4 Volume" value="14" />
     </path>
 
     <path name="stereo-mic-gain-high">
         <path name="stereo-mic-common" />
         <ctl name="ADC1 Volume" value="19" />
-        <ctl name="ADC4 Volume" value="19" />
+        <ctl name="ADC4 Volume" value="18" />
     </path>
 
     <path name="mono-mic-split-stereo-common">
@@ -2140,7 +2140,7 @@
         <ctl name="ADC4 Volume" value="12" />
     </path>
 
-    <path name="mono-mic-split-stereo-gain-low">
+   <path name="mono-mic-split-stereo-gain-low">
         <path name="mono-mic-split-stereo-common" />
         <ctl name="ADC4 Volume" value="12" />
     </path>
@@ -2605,36 +2605,36 @@
         <ctl name="SLIM TX7 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
         <!-- 65 % of 124 (range 0 - 124) Register: 0x249 -->
-        <ctl name="DEC6 Volume" value="84" />
+        <ctl name="DEC6 Volume" value="81" />
         <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <!-- 68 % of 124 (range 0 - 124) Register: 0x231 -->
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="80" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
     <path name="camcorder-mic">
         <path name="camcorder-mic-common" />
         <ctl name="ADC1 Volume" value="12" />
-        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="11" />
     </path>
 
     <path name="camcorder-mic-gain-low">
         <path name="camcorder-mic-common" />
         <ctl name="ADC1 Volume" value="12" />
-        <ctl name="ADC4 Volume" value="12" />
+        <ctl name="ADC4 Volume" value="11" />
     </path>
 
     <path name="camcorder-mic-gain-mid">
         <path name="camcorder-mic-common" />
         <ctl name="ADC1 Volume" value="15" />
-        <ctl name="ADC4 Volume" value="15" />
+        <ctl name="ADC4 Volume" value="14" />
     </path>
 
     <path name="camcorder-mic-gain-high">
         <path name="camcorder-mic-common" />
         <ctl name="ADC1 Volume" value="19" />
-        <ctl name="ADC4 Volume" value="19" />
+        <ctl name="ADC4 Volume" value="18" />
     </path>
 
     <path name="hdmi-tx">
